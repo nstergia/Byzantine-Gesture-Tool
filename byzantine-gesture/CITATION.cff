@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Byzantine Gesture: a browser-based tool for aligning and evaluating the Patronas hand method with vocal pitch"
+version: 1.0.0
+doi: 10.5281/zenodo.XXXXXXX   # ← αντικατάστησε με το πραγματικό DOI από το Zenodo
+date-released: 2026-10-22
+license: MIT
+repository-code: "https://github.com/USERNAME/byzantine-gesture"   # ← αντικατάστησε με το πραγματικό URL
+authors:
+  - family-names: "Stergiaki"
+    given-names: "Athanasia"
+    orcid: "https://orcid.org/0000-0000-0000-0000"   # ← συμπλήρωσε το ORCID
+  - family-names: "Kritopoulou"
+    given-names: "Paraskevi"
+    orcid: "https://orcid.org/0000-0000-0000-0000"   # ← συμπλήρωσε το ORCID
+  - family-names: "Kokkinidis"
+    given-names: "Kostas"
+    orcid: "https://orcid.org/0000-0000-0000-0000"   # ← συμπλήρωσε το ORCID
+  - family-names: "Patronas"
+    given-names: "George"
+    orcid: "https://orcid.org/0000-0000-0000-0000"   # ← συμπλήρωσε το ORCID
+keywords:
+  - Byzantine chant
+  - Byzantine music
+  - cheironomy
+  - Patronas method
+  - gesture recognition
+  - pitch estimation
+  - music education
+abstract: >-
+  A zero-install, client-side web application for teaching the Patronas
+  hand method of Byzantine chant. It aligns a teacher reference video with
+  a live or recorded student performance, tracks the conducting hand with
+  MediaPipe, estimates vocal fundamental frequency with the YIN algorithm,
+  quantises pitch to the nine-degree Byzantine scale, and scores hand-shape
+  correlation and intonation in real time.

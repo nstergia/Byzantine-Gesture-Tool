@@ -1,0 +1,10 @@
+{
+  "name": "byzantine-gesture",
+  "version": "1.0.0",
+  "description": "Browser-based alignment and evaluation tool for teaching the Byzantine (Patronas) hand gesture method alongside vocal pitch.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/core.test.mjs tests/mirror.test.mjs"
+  }
+}
