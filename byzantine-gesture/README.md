@@ -136,3 +136,6 @@ used when a recorded take is analysed afterwards.
 The recorder and the teacher video never start at exactly the same instant. The application measures the delay between the two (the `start` event of the recorder and the first
 frame of the teacher) and applies it as the offset of the take, so that the take opens aligned. The status line reports the delay. A small remaining difference (camera and microphone
 latency, or the singer's reaction time) can be corrected with the ±0.05 / ±0.25 buttons or with LOCK HERE.
+
+
+[![DOI](https://zenodo.org/badge/1433588304.svg)](https://doi.org/10.5281/zenodo.23650181)
