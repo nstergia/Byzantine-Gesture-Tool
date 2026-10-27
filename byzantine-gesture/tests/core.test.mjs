@@ -36,6 +36,12 @@ test('detectPitch finds a low male fundamental (110 Hz)', () => {
   const hz = detectPitch(sine(110, 44100, 4096), 44100);
   assert.ok(Math.abs(hz - 110) < 3, `expected ~110 Hz, got ${hz}`);
 });
+test('detectPitch reaches the top of the search range (960, 980 and 995 Hz at 48 kHz)', () => {
+  for (const f of [960, 980, 995]) {
+    const hz = detectPitch(sine(f, 48000, 4096), 48000);
+    assert.ok(Math.abs(1200 * Math.log2(hz / f)) < 10, `${f} Hz read as ${hz}`);
+  }
+});
 test('detectPitch returns -1 for silence', () => {
   assert.equal(detectPitch(silence(4096), 44100), -1);
 });
@@ -89,9 +95,9 @@ test('open palm with extended fingers = freeze', () => {
   ]);
   assert.equal(classifyGesture(lm), 'freeze');
 });
-test('fist = reset (×1 speed)', () => {
+test('fist = play', () => {
   const lm = landmarks([]);
-  assert.equal(classifyGesture(lm), 'reset');
+  assert.equal(classifyGesture(lm), 'play');
 });
 test('index + middle up (V sign) = replay', () => {
   const lm = landmarks([
@@ -107,7 +113,7 @@ test('index only, clearly above knuckle = slow', () => {
   ]);
   assert.equal(classifyGesture(lm), 'slow');
 });
-test('OK sign = play', () => {
+test('OK sign is not a command', () => {
   const lm = landmarks([
     { tipIdx: 4,  pipIdx: 2,  tip: [0.52, 0.32], pip: [0.50, 0.45] },
     { tipIdx: 8,  pipIdx: 6,  tip: [0.50, 0.30], pip: [0.50, 0.45] },
@@ -115,7 +121,7 @@ test('OK sign = play', () => {
     { tipIdx: 16, pipIdx: 14, tip: [0.60, 0.30], pip: [0.60, 0.45] },
     { tipIdx: 20, pipIdx: 18, tip: [0.64, 0.35], pip: [0.62, 0.48] },
   ]);
-  assert.equal(classifyGesture(lm), 'play');
+  assert.equal(classifyGesture(lm), null);
 });
 test('ambiguous pose returns null', () => {
   const lm = landmarks([

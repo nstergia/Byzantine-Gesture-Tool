@@ -785,7 +785,7 @@ function detectPitch(buf, sampleRate) {
     running+=sum; yin[tau]=running?sum*tau/running:1;
   }
   var tauEst=-1;
-  for (var tau2=minLag+2; tau2<maxLag; tau2++) {
+  for (var tau2=minLag; tau2<maxLag; tau2++) {
     if (yin[tau2]<0.20 && yin[tau2]<yin[tau2-1] && yin[tau2]<=yin[tau2+1]) { tauEst=tau2; break; }
   }
   if (tauEst<0) {
@@ -795,7 +795,7 @@ function detectPitch(buf, sampleRate) {
   }
   if (tauEst<0) return -1;
   var x0=tauEst>0?tauEst-1:tauEst, x2=tauEst+1<=maxLag?tauEst+1:tauEst;
-  var s0=yin[x0], s1=yin[tauEst], s2=yin[x2], better=tauEst, den=2*s1-s2-s0;
+  var s0=yin[x0], s1=yin[tauEst], s2=yin[x2], better=tauEst, den=s0-2*s1+s2;
   if (den!==0) better=tauEst+(s0-s2)/(2*den);
   if (better<1) return -1;
   var hz=sampleRate/better;

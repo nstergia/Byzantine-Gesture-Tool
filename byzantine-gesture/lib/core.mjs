@@ -50,7 +50,7 @@ export function detectPitch(buf, sampleRate) {
     yin[tau] = running ? sum * tau / running : 1;
   }
   let tauEst = -1;
-  for (let t = minLag + 2; t < maxLag; t++) {
+  for (let t = minLag; t < maxLag; t++) {
     if (yin[t] < 0.20 && yin[t] < yin[t - 1] && yin[t] <= yin[t + 1]) { tauEst = t; break; }
   }
   if (tauEst < 0) {
@@ -63,7 +63,7 @@ export function detectPitch(buf, sampleRate) {
   const x2 = tauEst + 1 <= maxLag ? tauEst + 1 : tauEst;
   const s0 = yin[x0], s1 = yin[tauEst], s2 = yin[x2];
   let better = tauEst;
-  const den = 2 * s1 - s2 - s0;
+  const den = s0 - 2 * s1 + s2;               // parabolic interpolation around the dip
   if (den !== 0) better = tauEst + (s0 - s2) / (2 * den);
   if (better < 1) return -1;
   const hz = sampleRate / better;
@@ -105,21 +105,21 @@ export function yToNoteF(y) {
 }
 export function yToNote(y) { return Math.round(yToNoteF(y)); }
 
-/* ── left-hand transport gestures (MediaPipe 21 landmarks) ── */
+/* ── left-hand transport gestures (MediaPipe 21 landmarks) ──
+ * Same rules as classifyGesture() in src/index.html (checked by tests/mirror.test.mjs):
+ * fist = play, open palm = freeze, V sign = replay, raised index = slow. */
 export function classifyGesture(lm) {
-  const up = (tip, pip) => lm[tip].y < lm[pip].y - 0.02;
+  const up = (tip, pip) => lm[tip].y < lm[pip].y - 0.012;
   const ext = (tip) => Math.hypot(lm[tip].x - lm[0].x, lm[tip].y - lm[0].y);
   const iUp = up(8, 6), mUp = up(12, 10), rUp = up(16, 14), pUp = up(20, 18);
   const upN = [iUp, mUp, rUp, pUp].filter(Boolean).length;
-  const iExt = ext(8) > 0.22, mExt = ext(12) > 0.22, rExt = ext(16) > 0.20, pExt = ext(20) > 0.18;
-  const tTip = lm[4], tBase = lm[2], iTip = lm[8];
-  const thumbOut = Math.abs(tTip.x - tBase.x) > 0.06;
-  const okDist = Math.hypot(tTip.x - iTip.x, tTip.y - iTip.y);
-  if (okDist < 0.07 && mUp && rUp && pUp && mExt) return 'play';
-  if (upN >= 4 && iExt && mExt && rExt && thumbOut) return 'freeze';
-  if (iUp && mUp && !rUp && !pUp && iExt && mExt && !rExt) return 'replay';
-  if (iUp && !mUp && !rUp && !pUp && iExt && !mExt && lm[8].y < lm[5].y - 0.05) return 'slow';
-  if (upN === 0 && !iExt && !mExt && !rExt && !pExt) return 'reset';
+  const iExt = ext(8) > 0.15, mExt = ext(12) > 0.15, rExt = ext(16) > 0.13, pExt = ext(20) > 0.12;
+  const tTip = lm[4], tBase = lm[2];
+  const thumbOut = Math.abs(tTip.x - tBase.x) > 0.04;
+  if (upN === 0 && !iExt && !mExt && !rExt && !pExt) return 'play';
+  if (upN >= 3 && iExt && mExt && rExt && thumbOut) return 'freeze';
+  if (iUp && mUp && iExt && mExt && !rUp && !pUp) return 'replay';
+  if (iUp && iExt && !mUp && !rUp && !pUp && lm[8].y < lm[12].y - 0.02) return 'slow';
   return null;
 }
 

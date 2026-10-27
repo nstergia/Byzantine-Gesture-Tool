@@ -56,6 +56,8 @@ src/index.html          the complete application
 vendor/                 bundled MediaPipe Hands 0.4.1675469240 and Camera Utils 0.3.1675466862
 lib/core.mjs            pure algorithms extracted from the app
 tests/core.test.mjs     unit tests for the scientific core
+tests/mirror.test.mjs   checks that the app's copies of the core routines behave identically
+bench/                  pitch-detector accuracy test (paper, Section 3.2) and Fig. 4
 docs/architecture.md    module & data-flow description
 start.sh / start.bat    convenience launchers (auto-open browser)
 ```
@@ -67,8 +69,10 @@ Requires Node.js ≥ 18:
 ```bash
 npm test
 # or
-node --test tests/core.test.mjs
+node --test tests/core.test.mjs tests/mirror.test.mjs
 ```
+
+Pitch-detector benchmark: see `bench/README.md`.
 
 Compatible with Node 18–24.
 
