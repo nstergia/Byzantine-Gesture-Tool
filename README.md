@@ -1,5 +1,7 @@
 # Byzantine Gesture
 
+[![DOI](https://zenodo.org/badge/1433588304.svg)](https://doi.org/10.5281/zenodo.23650181)
+
 A browser application that compares a learner's hand movement and singing voice
 with a teacher's video recording, for teaching Byzantine chant.
 
