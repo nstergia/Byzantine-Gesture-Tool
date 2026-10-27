@@ -1,6 +1,6 @@
 {
   "name": "byzantine-gesture",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Browser tool that compares a learner's hand height and singing voice with a teacher's recording, for Byzantine chant teaching.",
   "type": "module",
   "license": "MIT",

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.2
+- Repository layout: README, LICENSE and CITATION.cff at the repository root;
+  the application README restored in `byzantine-gesture/`. No change to the code.
+  (The archived 1.0.1 release had these files in the wrong folder.)
+
 ## 1.0.1
 - Pitch detector: the YIN dip search now starts at the shortest lag of the search range
   (it started two samples later, so frequencies above about 970 Hz were read an octave low; the detector now works up to the 1,000 Hz limit).
