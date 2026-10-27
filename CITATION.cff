@@ -2,8 +2,9 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: "Byzantine Gesture: a browser-based tool for real-time comparison of hand movement and voice in Byzantine chant learning"
-version: 1.0.1
+version: 1.0.2
 date-released: 2026-10-27
+doi: 10.5281/zenodo.23650181
 license: MIT
 repository-code: "https://github.com/nstergia/Byzantine-Gesture-Tool"
 authors:
