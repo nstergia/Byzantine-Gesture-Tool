@@ -5,7 +5,10 @@
 A browser application that compares a learner's hand movement and singing voice
 with a teacher's video recording, for teaching Byzantine chant.
 
-The application, its documentation, tests and benchmark are in the
+**Try it online, nothing to install:** https://nstergia.github.io/Byzantine-Gesture-Tool/
+(Chrome or Edge). Οδηγίες στα ελληνικά: [byzantine-gesture/ODIGIES.md](byzantine-gesture/ODIGIES.md).
+
+The application, its documentation, tests and benchmarks are in the
 [`byzantine-gesture/`](byzantine-gesture/) folder. Start with its
 [README](byzantine-gesture/README.md).
 

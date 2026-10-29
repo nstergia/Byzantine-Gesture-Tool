@@ -1,0 +1,251 @@
+{
+  "settings": {
+    "windows": 2000,
+    "points": 28,
+    "stepS": 0.09,
+    "lagS": 0.15,
+    "stillSD": 0.18
+  },
+  "results": [
+    {
+      "teacherSD": 0.3,
+      "student": "follows",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 100,
+        "close": 0,
+        "off": 0
+      },
+      "v1_0": {
+        "exact": 100,
+        "close": 0,
+        "off": 0
+      }
+    },
+    {
+      "teacherSD": 0.3,
+      "student": "follows-wider",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 99,
+        "close": 1.1,
+        "off": 0
+      },
+      "v1_0": {
+        "exact": 99,
+        "close": 1.1,
+        "off": 0
+      }
+    },
+    {
+      "teacherSD": 0.3,
+      "student": "still",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 0,
+        "close": 0,
+        "off": 100
+      },
+      "v1_0": {
+        "exact": 49.8,
+        "close": 0,
+        "off": 50.3
+      }
+    },
+    {
+      "teacherSD": 0.3,
+      "student": "unrelated",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 25.1,
+        "close": 0,
+        "off": 75
+      },
+      "v1_0": {
+        "exact": 49.5,
+        "close": 0,
+        "off": 50.6
+      }
+    },
+    {
+      "teacherSD": 0.3,
+      "student": "opposite",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 0,
+        "close": 0,
+        "off": 100
+      },
+      "v1_0": {
+        "exact": 0,
+        "close": 0,
+        "off": 100
+      }
+    },
+    {
+      "teacherSD": 0.6,
+      "student": "follows",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 98.3,
+        "close": 1.7,
+        "off": 0
+      },
+      "v1_0": {
+        "exact": 98.3,
+        "close": 1.7,
+        "off": 0
+      }
+    },
+    {
+      "teacherSD": 0.6,
+      "student": "follows-wider",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 24.9,
+        "close": 75.1,
+        "off": 0
+      },
+      "v1_0": {
+        "exact": 24.9,
+        "close": 75.1,
+        "off": 0
+      }
+    },
+    {
+      "teacherSD": 0.6,
+      "student": "still",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 0,
+        "close": 0,
+        "off": 100
+      },
+      "v1_0": {
+        "exact": 2.4,
+        "close": 49.7,
+        "off": 48
+      }
+    },
+    {
+      "teacherSD": 0.6,
+      "student": "unrelated",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 12.7,
+        "close": 13.1,
+        "off": 74.3
+      },
+      "v1_0": {
+        "exact": 12.7,
+        "close": 37.8,
+        "off": 49.6
+      }
+    },
+    {
+      "teacherSD": 0.6,
+      "student": "opposite",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 0,
+        "close": 0,
+        "off": 100
+      },
+      "v1_0": {
+        "exact": 0,
+        "close": 0,
+        "off": 100
+      }
+    },
+    {
+      "teacherSD": 1,
+      "student": "follows",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 99.5,
+        "close": 0.6,
+        "off": 0
+      },
+      "v1_0": {
+        "exact": 99.5,
+        "close": 0.6,
+        "off": 0
+      }
+    },
+    {
+      "teacherSD": 1,
+      "student": "follows-wider",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 0,
+        "close": 100,
+        "off": 0
+      },
+      "v1_0": {
+        "exact": 0,
+        "close": 100,
+        "off": 0
+      }
+    },
+    {
+      "teacherSD": 1,
+      "student": "still",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 0,
+        "close": 0,
+        "off": 100
+      },
+      "v1_0": {
+        "exact": 0,
+        "close": 47.6,
+        "off": 52.5
+      }
+    },
+    {
+      "teacherSD": 1,
+      "student": "unrelated",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 10.6,
+        "close": 13.9,
+        "off": 75.6
+      },
+      "v1_0": {
+        "exact": 10.6,
+        "close": 27,
+        "off": 62.5
+      }
+    },
+    {
+      "teacherSD": 1,
+      "student": "opposite",
+      "scored": 2000,
+      "skippedStill": 0,
+      "current": {
+        "exact": 0,
+        "close": 0,
+        "off": 100
+      },
+      "v1_0": {
+        "exact": 0,
+        "close": 0,
+        "off": 100
+      }
+    }
+  ]
+}
