@@ -1,0 +1,70 @@
+{
+  "contours": 20,
+  "seconds": 120,
+  "results": [
+    {
+      "teacherDrop": 0,
+      "studentDrop": 0,
+      "perFrame": {
+        "windows": 25541,
+        "exact": 100,
+        "close": 0,
+        "off": 0
+      },
+      "mediaTime": {
+        "windows": 25545,
+        "exact": 100,
+        "close": 0,
+        "off": 0
+      }
+    },
+    {
+      "teacherDrop": 0.1,
+      "studentDrop": 0.1,
+      "perFrame": {
+        "windows": 22852,
+        "exact": 99.7,
+        "close": 0,
+        "off": 0.3
+      },
+      "mediaTime": {
+        "windows": 23020,
+        "exact": 99.9,
+        "close": 0,
+        "off": 0.1
+      }
+    },
+    {
+      "teacherDrop": 0.1,
+      "studentDrop": 0.35,
+      "perFrame": {
+        "windows": 16302,
+        "exact": 96,
+        "close": 0,
+        "off": 4
+      },
+      "mediaTime": {
+        "windows": 16614,
+        "exact": 99.8,
+        "close": 0,
+        "off": 0.2
+      }
+    },
+    {
+      "teacherDrop": 0.3,
+      "studentDrop": 0.3,
+      "perFrame": {
+        "windows": 17548,
+        "exact": 98.4,
+        "close": 0,
+        "off": 1.6
+      },
+      "mediaTime": {
+        "windows": 17910,
+        "exact": 99.9,
+        "close": 0,
+        "off": 0.1
+      }
+    }
+  ]
+}
