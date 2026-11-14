@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="refresh" content="0; url=byzantine-gesture/src/index.html">
 <title>Byzantine Gesture</title>
-<script>window.location.replace("byzantine-gesture/src/index.html");</script>
+<script>
+  // keep parameters such as ?perf=1, ?echo=on or ?gestures=debug when redirecting
+  window.location.replace("byzantine-gesture/src/index.html" + window.location.search + window.location.hash);
+</script>
 </head>
 <body>
 <p><a href="byzantine-gesture/src/index.html">Byzantine Gesture</a></p>
